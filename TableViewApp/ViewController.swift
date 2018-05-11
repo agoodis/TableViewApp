@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let restarauntNames = ["Ogonek", "Banasi", "Milk", "Cow", "Kebab", "Marusia", "Classic", "Ben&Bon", "KidlLands", "Momy", "Clark's", "Level UP", "Sons", "Beef", "Beer House", "Nuga"]
+    let restarauntNames = ["Ogonek", "Banasi", "Milk", "Cow", "Kebab", "Marusia", "Classic", "Ben&Bon", "KidlLands", "Momy", "Clark's", "Level UP", "Sons", "Beef", "Beer House"]
+    
+    let restaurantImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "morris.jpg", "ogonek.jpg", "elu.jpg", "bonsai.jpg", "morris.jpg", "ogonek.jpg", "elu.jpg", "bonsai.jpg", "morris.jpg", "ogonek.jpg", "elu.jpg", "bonsai.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +30,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-
+    
         cell?.textLabel?.text = restarauntNames[indexPath.row]
+        cell?.imageView?.image = UIImage(named: restaurantImages[indexPath.row])
         
         return cell!
     }
